@@ -1,147 +1,243 @@
 
 $ft-green: #1dbb90
-$ft-grey: #e5e5e5
 
-.wy-body-for-nav
-    background: none
+a,
+a:hover,
+a:visited
+    color: $gray
 
-.wy-nav-content-wrap
-    max-width: 1170px
-    margin: 0 auto
-    background: none
+h1, h2, h3, h4, h5, h6, legend
+    font-weight: 400
 
-    &.shift
-        top: auto
+ul.simple
+    font-size: 90%
 
-.wy-nav-content-wrap-inner
-    position: absolute
-    width: 100%
-    max-width: 1170px
+/* --- ADDED ELEMENTS --- */
 
-    @media (max-width: 1200px)
-        padding-left: 30px
-
-    @media (max-width: 770px)
-        padding-left: 0
-
-.wy-nav-content
-    width: 100%
-    max-width: none
-    padding: 30px 0
-    padding-right: 370px
-    float: left
-    background: none
-
-    @media (max-width: 1200px)
-        padding-right: 350px
-
-    @media (max-width: 770px)
-        padding-right: 0
-
-    a
-        color: $gray
-
-
-@media (max-width: 770px)
-    .wy-nav-side
-        z-index: -1
-
-.wy-nav-side
-    padding: 30px 0
-    position: absolute
-    right: 0
-    left: auto
-    background: none
-
-    @media (max-width: 770px)
-        .wy-menu
-            display: none
-
-        &.shift .wy-menu
-            width: 75%
-            position: fixed
-            left: 25px
-            display: block
-
-        right: auto
-        left: 0
-
-    .wy-menu-vertical
-        @media (max-width: 1200px)
-            margin-right: 30px
-
-        li
-            a
-                border-color: $white
-                border-bottom: 1px solid $gray-lighter
-
-                &:hover
-                    background: none
-
-        li.current
-            background: none
-
-            > a
-                background: none
-
-.wy-side-nav-search
-    max-width: 1170px
-    margin: 0 auto
-    padding-left: 0
-    padding-right: 0
-    background-color: $ft-grey
-
-    input[type=text]
-        padding: 22px 20px
-        border-color: $white
-        border-radius: 2px
-        box-shadow: none
-        font-size: 20px
-
-    @media (min-width: 770px) and (max-width: 1200px)
-        padding-left: 25px
-        padding-right: 25px
-
-.wy-side-nav-search-wrap
-    padding: 30px 0
-    background-color: $ft-grey
-
-    @media (max-width: 770px)
-        display: none
-
-.wy-nav-top
-    padding: 0 25px
-    background: none
-    vertical-align: bottom
-
-    @media (max-width: 770px)
-        display: inline-block
-
-.title
-    width: 1170px
-    margin: 0 auto
-    padding: 30px 0
-
-    a.fa
-        color: $white
-        font-size: 22px
-
-    @media (min-width: 770px) and (max-width: 1200px)
-        padding-left: 25px
+.header,
+.search-box,
+.body,
+.footer
+    padding: 0 30px
 
 .header
     background-color: $ft-green
 
-.rst-versions
-    border-top: none
-    background-color: $ft-green
+.header-inner
+    padding: 25px 0
 
-    @media (min-width: 770px)
+.header-inner,
+.search-box-inner,
+.footer-inner
+    margin: 0 auto
+    max-width: 1024px
+
+.search-box
+    padding-top: 25px
+    padding-bottom: 25px
+    background-color: $table-border-color
+
+.body-inner
+    margin: 25px auto
+    max-width: 1024px
+
+.content
+    width: 75%
+    padding-bottom: 50px
+    float: left
+
+    .document
+        a
+            text-decoration: underline
+
+.menu
+    width: 25%
+    float: left
+
+.footer
+    height: 150px
+    clear: both
+    background-color: $gray
+
+.footer-inner
+    padding-top: 25px
+
+    a
+        color: $white
+
+        &:hover
+            text-decoration: underline
+
+    .bitbucket-link
+        float: right
+
+/* --- OVERRIDDEN ELEMENTS --- */
+
+.wy-body-for-nav
+    background: none
+
+.wy-nav-side
+    width: auto
+    position: relative
+    background: none
+
+.wy-nav-content
+    padding: 0
+    background: none
+
+.wy-nav-content-wrap
+    margin: 0
+    background: none
+
+    &.shift
         left: auto
+
+.wy-side-nav-search
+    padding: 0
+    background: none
+
+    input[type=text]
+        padding: 22px 20px
+        border-color: $white
+        box-shadow: none
+        border-radius: 2px
+        font-size: 20px
+
+.wy-menu-vertical
+    a
+        padding-left: 0
+        color: $text-light
+        border-bottom: 1px solid $gray-lighter
+        @include transition-duration(0.2s)
+
+        &:hover
+            color: $gray
+            background: none
+
+    li
+        &.current
+            background: none
+
+            > a
+                padding-left: 0
+                background: none
+
+            a
+                padding-left: $gutter
+                color: $text-light
+                border: none
+                border-bottom: 1px solid $gray-lighter
+
+                &:hover
+                    color: $gray
+                    background: none
+
+            ul
+                ul
+                    display: none
+
+        &.toctree-l1
+            &.current
+                > a
+                    padding-left: 0
+                    color: $gray
+
+                .toctree-l2
+                    &.current
+                        > a
+                            padding-left: $gutter
+                            color: $gray
+                            background: none
+
+                        ul
+                            display: block
+
+                    .toctree-l3
+                        a
+                            padding-left: 2 * $gutter
+
+.rst-versions
+    width: auto
+    margin-bottom: 25px
+    position: relative
+    background-color: $ft-green
+    border-top: 0
 
     .rst-current-version
         color: $white
         background: none
 
-    dt
-        color: $black
+    .rst-other-versions
+        color: $gray
+
+div[class^='highlight'] pre
+    background-color: $section-background-color
+
+a.fa-home
+    font-size: 26px
+    color: $white
+
+/* --- MEDIA QUERIES --- */
+
+@media screen and (min-width: 768px) /* larger than 768px */
+    .content
+        padding-right: 25px
+        border-right: 1px solid $table-border-color
+
+    .wy-menu-vertical
+        a
+            margin-left: 25px
+
+    .rst-versions
+        margin-left: 25px
+
+@media screen and (max-width: 768px) /* smaller than 768px */
+    .content
+        width: 100%
+
+    .menu
+        width: 75%
+        height: 100%
+        padding-top: 25px
+        display: none
+
+    .wy-nav-top
+        padding-top: 0px
+        display: inline-block
+        vertical-align: middle
+        background: none
+
+    .wy-nav-content-wrap
+        .wy-nav-content
+            padding: 0
+
+    .wy-nav-side
+        &.shift
+            width: auto
+            min-height: 0
+
+    .shift
+        .header,
+        .search-box
+            width: 100%
+            position: absolute
+            left: 85%
+
+        .search-box
+            top: 87px
+
+        .body-inner
+            margin: 0
+
+        .content
+            position: absolute
+            left: 85%
+            top: 250px
+
+        .menu
+            position: absolute
+            overflow: auto
+            display: block
+
+        .footer
+            display: none
