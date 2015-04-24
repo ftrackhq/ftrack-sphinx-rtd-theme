@@ -12,10 +12,12 @@ h1, h2, h3, h4, h5, h6, legend
 ul.simple
     font-size: 90%
 
+code
+    font-size: 90%
+
 /* --- ADDED ELEMENTS --- */
 
 .header,
-.search-box,
 .body,
 .footer
     padding: 0 30px
@@ -27,15 +29,12 @@ ul.simple
     padding: 25px 0
 
 .header-inner,
-.search-box-inner,
 .footer-inner
     margin: 0 auto
     max-width: 1024px
 
 .search-box
-    padding-top: 25px
     padding-bottom: 25px
-    background-color: $table-border-color
 
 .body-inner
     margin: 25px auto
@@ -93,15 +92,16 @@ ul.simple
         left: auto
 
 .wy-side-nav-search
+    margin-bottom: 25px
     padding: 0
+    text-align: left
     background: none
 
     input[type=text]
-        padding: 22px 20px
-        border-color: $white
-        box-shadow: none
+        border-color: #eee
         border-radius: 2px
-        font-size: 20px
+        font-size: 16px
+        box-shadow: inset 0 1px 3px $table-border-color
 
 .wy-menu-vertical
     a
@@ -163,6 +163,18 @@ ul.simple
                         a
                             padding-left: 2 * $gutter
 
+.rst-content
+    tt
+        font-size: 90%
+
+    ol.arabic
+        li
+            ul
+                li
+                    ol.arabic
+                        li
+                            list-style: decimal
+
 .rst-versions
     width: auto
     margin-bottom: 25px
@@ -178,6 +190,7 @@ ul.simple
         color: $gray
 
 div[class^='highlight'] pre
+    font-size: 13px
     background-color: $section-background-color
 
 a.fa-home
@@ -192,12 +205,15 @@ a.fa-home
 
 @media screen and (min-width: 768px) /* larger than 768px */
     .content
-        padding-right: 25px
-        border-right: 1px solid $table-border-color
+        padding-left: 25px
+        border-left: 1px solid $table-border-color
 
     .wy-menu-vertical
         a
-            margin-left: 25px
+            margin-right: 25px
+
+    .wy-side-nav-search
+        margin-right: 25px
 
     .rst-versions
         margin-left: 25px
@@ -228,14 +244,10 @@ a.fa-home
             min-height: 0
 
     .shift
-        .header,
-        .search-box
+        .header
             width: 100%
             position: absolute
             left: 85%
-
-        .search-box
-            top: 87px
 
         .body-inner
             margin: 0
@@ -243,7 +255,7 @@ a.fa-home
         .content
             position: absolute
             left: 85%
-            top: 250px
+            top: 112px
 
         .menu
             position: absolute

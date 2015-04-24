@@ -99,35 +99,17 @@
 
       </div>
 
-      <div class="search-box">
-
-        <div class="search-box-inner wy-side-nav-search">
-
-          {% include "searchbox.html" %}
-
-        </div>
-
-      </div>
-
       <div class="body">
 
         <div class="body-inner">
 
-          <div class="content">
-
-            {# PAGE CONTENT #}
-            <div class="wy-nav-content">
-              <div class="rst-content">
-                {% include "breadcrumbs.html" %}
-                <div role="main" class="document">
-                  {% block body %}{% endblock %}
-                </div>
-              </div>
-            </div>
-
-          </div>
-
           <div class="menu">
+
+            <div class="search-box wy-side-nav-search">
+
+              {% include "searchbox.html" %}
+
+            </div>
 
             {# SIDE NAV, TOGGLES ON MOBILE #}
             <nav data-toggle="wy-nav-shift" class="wy-nav-side">
@@ -146,6 +128,20 @@
             </nav>
 
             {% include "versions.html" %}
+
+          </div>
+
+          <div class="content">
+
+            {# PAGE CONTENT #}
+            <div class="wy-nav-content">
+              <div class="rst-content">
+                {% include "breadcrumbs.html" %}
+                <div role="main" class="document">
+                  {% block body %}{% endblock %}
+                </div>
+              </div>
+            </div>
 
           </div>
 
